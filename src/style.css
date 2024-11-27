@@ -1,0 +1,127 @@
+/* copy + paste with Ctrl + Z afterwords, for correct formatting */
+
+/* standards ________________________________________________________________*/
+:root {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  --black010: rgba(0, 0, 0, 0.1);
+  --black050: rgba(0, 0, 0, 0.5);
+  --gray010: rgba(128, 128, 128, 0.1);
+  --gray050: rgba(128, 128, 128, 0.5);
+  --white010: rgba(255, 255, 255, 0.1);
+  --white050: rgba(255, 255, 255, 0.5);
+
+  --accent: lightsteelblue;
+
+  --shadow: 0 0 0.5rem var(--black050);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  outline: none;
+
+  font-size: 1rem;
+  line-height: 1.5;
+
+  /* border: 1px solid red; */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: 1rem; */
+}
+.carousel {
+  position: relative;
+  width: 50%;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  color: white;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10% 0.5rem;
+}
+.prev:hover,
+.next:hover {
+  background-color: var(--black050);
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 1rem 1rem 0;
+}
+.next {
+  right: 0;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.counter {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  color: white;
+  background-color: var(--black050);
+  padding: 0 0.4rem;
+  border-radius: 1rem;
+}
+
+img {
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 3px;
+  background-color: var(--black050);
+  padding: 0.4rem;
+  border-radius: 1rem;
+}
+.dot {
+  background-color: var(--white050);
+  padding: 0.3rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.dot:hover {
+  background-color: white;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+  /* padding: 1rem; */
+}
+
+.menu {
+  color: white;
+  display: none;
+  position: absolute;
+  left: -1rem;
+  z-index: 1000;
+  background-color: var(--black050);
+  padding: 0 1rem 1rem 1rem;
+  border-radius: 0 0 1rem 1rem;
+}
